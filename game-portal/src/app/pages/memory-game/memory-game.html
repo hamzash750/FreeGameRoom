@@ -1,0 +1,11 @@
+<div class="container py-4 text-center">
+  <h2 class="mb-3">Memory Game</h2>
+  <div class="board d-grid mx-auto mb-3">
+    <button class="card" *ngFor="let card of cards" (click)="flip(card)">
+      <span *ngIf="card.revealed || card.matched">{{ card.value }}</span>
+    </button>
+  </div>
+  <p>Moves: {{ moves }}</p>
+  <button class="btn btn-primary" (click)="reset()">Restart</button>
+  <a routerLink="/" class="btn btn-link d-block mt-2">Back to Games</a>
+</div>

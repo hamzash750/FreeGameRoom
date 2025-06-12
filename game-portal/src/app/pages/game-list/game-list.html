@@ -6,7 +6,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ game.name }}</h5>
           <p class="card-text">{{ game.description }}</p>
-          <a [routerLink]="['/game', game.id]" class="btn btn-primary">Play Now</a>
+          <a [routerLink]="game.route" class="btn btn-primary">Play Now</a>
         </div>
       </div>
     </div>

@@ -11,9 +11,9 @@ import { RouterModule } from '@angular/router';
 })
 export class GameList {
 games = [
-  { id: 1, name: 'Tic Tac Toe', description: 'Classic tic tac toe game' },
-  { id: 2, name: 'Snake', description: 'Grow the snake and avoid walls!' },
-  { id: 3, name: 'Memory Game', description: 'Match the cards!' },
+  { route: '/tic-tac-toe', name: 'Tic Tac Toe', description: 'Classic tic tac toe game' },
+  { route: '/snake', name: 'Snake', description: 'Grow the snake and avoid walls!' },
+  { route: '/memory', name: 'Memory Game', description: 'Match the cards!' },
 ];
 
 }
