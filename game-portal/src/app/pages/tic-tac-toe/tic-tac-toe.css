@@ -1,0 +1,21 @@
+.board {
+  width: 300px;
+  height: 300px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+}
+.cell {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+}
+.board.disabled .cell {
+  cursor: default;
+}

@@ -1,0 +1,12 @@
+.board {
+  width: 320px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.card {
+  height: 70px;
+  background: #0d6efd;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+}
