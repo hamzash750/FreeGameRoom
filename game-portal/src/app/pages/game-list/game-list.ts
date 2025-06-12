@@ -35,6 +35,18 @@ games = [
     name: 'Minesweeper',
     description: 'Clear the field without hitting mines.',
     icon: 'https://img.icons8.com/ios-filled/200/000000/minesweeper.png'
+  },
+  {
+    route: '/balloon',
+    name: 'Pop It Balloon',
+    description: 'Pop all the balloons!',
+    icon: 'https://img.icons8.com/emoji/200/balloon.png'
+  },
+  {
+    route: '/dice-roll',
+    name: 'Dice Roll',
+    description: 'Roll a dice and test your luck!',
+    icon: 'https://img.icons8.com/ios-filled/200/000000/dice.png'
   }
 ];
 

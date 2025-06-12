@@ -1,0 +1,7 @@
+<div class="container py-4 text-center">
+  <h2 class="mb-3">Dice Roll</h2>
+  <div class="dice-display mb-3" *ngIf="current !== null">{{ current }}</div>
+  <button class="btn btn-primary me-2" (click)="roll()">Roll</button>
+  <button class="btn btn-secondary" (click)="reset()">Reset</button>
+  <a routerLink="/" class="btn btn-link d-block mt-2">Back to Games</a>
+</div>
