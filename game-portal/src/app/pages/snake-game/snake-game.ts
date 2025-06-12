@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 interface Point { x: number; y: number; }
 
 @Component({
   selector: 'app-snake-game',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './snake-game.html',
   styleUrl: './snake-game.css'
 })

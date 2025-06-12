@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 interface Card {
   value: number;
@@ -10,7 +11,7 @@ interface Card {
 @Component({
   selector: 'app-memory-game',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './memory-game.html',
   styleUrl: './memory-game.css'
 })
