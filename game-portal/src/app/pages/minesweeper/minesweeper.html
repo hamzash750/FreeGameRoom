@@ -1,0 +1,20 @@
+<div class="container py-4 text-center">
+  <h2 class="mb-3">Minesweeper</h2>
+  <div class="board mx-auto mb-3">
+    <div class="row" *ngFor="let row of board; let y = index">
+      <button class="cell" *ngFor="let cell of row; let x = index"
+              (click)="reveal(cell, x, y)"
+              (contextmenu)="toggleFlag(cell); $event.preventDefault()">
+        <span *ngIf="cell.revealed">
+          <span *ngIf="cell.mine">💣</span>
+          <span *ngIf="!cell.mine && cell.adjacent > 0">{{cell.adjacent}}</span>
+        </span>
+        <span *ngIf="!cell.revealed && cell.flagged">🚩</span>
+      </button>
+    </div>
+  </div>
+  <p *ngIf="gameOver && remaining === 0" class="text-success">You Win!</p>
+  <p *ngIf="gameOver && remaining > 0" class="text-danger">Game Over!</p>
+  <button class="btn btn-primary" (click)="reset()">Restart</button>
+  <a routerLink="/" class="btn btn-link d-block mt-2">Back to Games</a>
+</div>

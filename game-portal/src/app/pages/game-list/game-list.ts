@@ -29,6 +29,12 @@ games = [
     name: 'Memory Game',
     description: 'Match the cards!',
    icon: 'https://cdn-icons-png.flaticon.com/512/3050/3050525.png'
+  },
+  {
+    route: '/minesweeper',
+    name: 'Minesweeper',
+    description: 'Clear the field without hitting mines.',
+    icon: 'https://img.icons8.com/ios-filled/200/000000/minesweeper.png'
   }
 ];
 

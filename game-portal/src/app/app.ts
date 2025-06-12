@@ -12,8 +12,8 @@ export class App {
     this.title.setTitle('Free Game Portal - Play Browser Games');
 
     this.meta.addTags([
-      { name: 'description', content: 'Enjoy free classic browser games like Tic Tac Toe, Snake, and Memory Game. No login required.' },
-      { name: 'keywords', content: 'Free games, Angular games, browser games, tic tac toe, snake, memory, HTML5 games' },
+      { name: 'description', content: 'Enjoy free classic browser games like Tic Tac Toe, Snake, Memory Game and Minesweeper. No login required.' },
+      { name: 'keywords', content: 'Free games, Angular games, browser games, tic tac toe, snake, memory, minesweeper, HTML5 games' },
       { name: 'author', content: 'Hamza Shafique' },
       { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
