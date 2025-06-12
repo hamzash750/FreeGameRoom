@@ -1,14 +1,28 @@
-<div class="container py-4">
-  <h1 class="text-center mb-4">🎮 Game Portal</h1>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let game of games">
-      <div class="card h-100 shadow">
-        <div class="card-body">
-          <h5 class="card-title">{{ game.name }}</h5>
-          <p class="card-text">{{ game.description }}</p>
-          <a [routerLink]="game.route" class="btn btn-primary">Play Now</a>
+<div class="container-fluid px-0">
+  <!-- Hero Section -->
+  <div class="text-white text-center py-5 position-relative" style="background: #0d6efd;">
+    <h1 class="display-4 fw-bold mb-2">🎮 GAME PORTAL</h1>
+    <p class="lead mb-0">Play browser games like Tic Tac Toe, Snake, and Memory — for free!</p>
+
+    <!-- Wave Divider -->
+   
+  </div>
+
+  <!-- Game Cards Section -->
+  <div class="container py-5">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" *ngFor="let game of games">
+        <div class="card h-100 border-0 shadow-lg text-center p-4 hover-scale transition-all">
+          <div class="mb-3 d-flex justify-content-center align-items-center rounded-circle shadow-sm bg-light" style="width: 80px; height: 80px; margin: 0 auto;">
+            <img [src]="game.icon" alt="{{ game.name }}" style="width: 40px; height: 40px;">
+          </div>
+          <h5 class="fw-semibold mt-2">{{ game.name }}</h5>
+          <p class="text-muted">{{ game.description }}</p>
+          <a [routerLink]="game.route" class="btn btn-outline-primary mt-2">Play Now</a>
         </div>
       </div>
     </div>
   </div>
+
+
 </div>
