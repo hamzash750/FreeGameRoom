@@ -16,12 +16,12 @@ export class SnakeGame implements AfterViewInit {
   private ctx!: CanvasRenderingContext2D;
   private size = 20;
   private snake: Point[] = [{ x: 8, y: 8 }];
-  private direction: Point = { x: 0, y: 0 };
   private food: Point = this.randomPoint();
   private intervalId: any;
   score = 0;
-
+private direction: Point = { x: 1, y: 0 }; // start moving right
   ngAfterViewInit(): void {
+     console.log('Canvas initialized');
     const canvas = this.canvasRef.nativeElement;
     canvas.width = 400;
     canvas.height = 400;
