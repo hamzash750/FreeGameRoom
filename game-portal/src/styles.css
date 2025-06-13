@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.game-container {
+  max-width: 768px;
+}
+
+.game-board {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.game-board-square {
+  aspect-ratio: 1/1;
+}

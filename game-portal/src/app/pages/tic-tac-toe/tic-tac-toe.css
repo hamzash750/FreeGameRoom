@@ -1,6 +1,4 @@
 .board {
-  width: 450px;
-  height: 450px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 5px;
@@ -8,7 +6,7 @@
 .cell {
   background: #f8f9fa;
   border: 1px solid #dee2e6;
-  font-size: 3rem;
+  font-size: calc(8vmin);
   font-weight: bold;
   display: flex;
   align-items: center;
