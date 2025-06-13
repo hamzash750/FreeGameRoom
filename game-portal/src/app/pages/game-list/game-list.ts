@@ -40,7 +40,7 @@ games = [
     route: '/balloon',
     name: 'Pop It Balloon',
     description: 'Pop all the balloons!',
-    icon: 'https://img.icons8.com/emoji/200/balloon.png'
+    icon: 'https://img.icons8.com/?size=100&id=26142&format=png&color=000000'
   },
   {
     route: '/dice-roll',
