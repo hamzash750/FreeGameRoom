@@ -1,6 +1,6 @@
 <div class="game-container container py-4 text-center">
   <h2 class="mb-3">Tic Tac Toe</h2>
-  <div class="board d-grid mx-auto" [class.disabled]="winner">
+  <div class="board game-board game-board-square d-grid mx-auto" [class.disabled]="winner">
     <button class="cell" *ngFor="let cell of board; let i = index" (click)="makeMove(i)">
       {{ cell }}
     </button>

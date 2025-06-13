@@ -1,6 +1,6 @@
-<div class="container py-4 text-center">
+<div class="game-container container py-4 text-center">
   <h2 class="mb-3">Pop It Balloon</h2>
-  <div class="board d-grid mx-auto mb-3">
+  <div class="board game-board game-board-square d-grid mx-auto mb-3">
     <button class="balloon" *ngFor="let b of balloons" [class.popped]="b.popped" (click)="pop(b)">
       <span *ngIf="!b.popped">🎈</span>
       <span *ngIf="b.popped">💥</span>

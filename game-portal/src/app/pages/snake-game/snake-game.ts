@@ -14,7 +14,7 @@ interface Point { x: number; y: number; }
 export class SnakeGame implements AfterViewInit {
   @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
   private ctx!: CanvasRenderingContext2D;
-  private size = 20;
+  private size = 30;
   private snake: Point[] = [{ x: 8, y: 8 }];
   private food: Point = this.randomPoint();
   private intervalId: any;
@@ -23,8 +23,8 @@ private direction: Point = { x: 1, y: 0 }; // start moving right
   ngAfterViewInit(): void {
      console.log('Canvas initialized');
     const canvas = this.canvasRef.nativeElement;
-    canvas.width = 400;
-    canvas.height = 400;
+    canvas.width = 600;
+    canvas.height = 600;
     this.ctx = canvas.getContext('2d')!;
     document.addEventListener('keydown', e => this.onKey(e));
     this.intervalId = setInterval(() => this.update(), 150);

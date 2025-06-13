@@ -1,6 +1,6 @@
-<div class="container py-4 text-center">
+<div class="game-container container py-4 text-center">
   <h2 class="mb-3">Memory Game</h2>
-  <div class="board d-grid mx-auto mb-3">
+  <div class="board game-board game-board-square d-grid mx-auto mb-3">
     <button class="card" *ngFor="let card of cards" (click)="flip(card)">
       <span *ngIf="card.revealed || card.matched">{{ card.value }}</span>
     </button>
