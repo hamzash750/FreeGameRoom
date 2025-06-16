@@ -1,0 +1,9 @@
+<script type="text/javascript">
+  var redirect = sessionStorage.redirect;
+  if (redirect) {
+    sessionStorage.removeItem('redirect');
+    window.location.href = redirect;
+  } else {
+    window.location.href = '/FreeGameRoom/';
+  }
+</script>

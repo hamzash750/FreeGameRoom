@@ -89,11 +89,7 @@
                   "glob": "**/*",
                   "input": "src/assets",
                   "output": "assets"
-                },  {
-    "glob": "sitemap.xml",
-    "input": "public",
-    "output": ""
-  }
+                }
             ],
             "styles": [
               "src/styles.css"
