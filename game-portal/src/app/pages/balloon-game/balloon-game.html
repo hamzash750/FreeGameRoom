@@ -1,12 +1,33 @@
 <div class="game-container container py-4 text-center">
-  <h2 class="mb-3">Pop It Balloon</h2>
-  <div class="board game-board game-board-square d-grid mx-auto mb-3">
-    <button class="balloon" *ngFor="let b of balloons" [class.popped]="b.popped" (click)="pop(b)">
-      <span *ngIf="!b.popped">🎈</span>
+  <h2 class="mb-2">🎈 Pop It Balloon</h2>
+
+  <div class="scoreboard d-flex justify-content-around mb-3">
+    <span>🎯 Popped: {{ popped }}</span>
+    <span>🏆 High Score: {{ highScore }}</span>
+    <span *ngIf="combo >= 2">🔥 Combo: {{ combo }}</span>
+  </div>
+
+  <div class="board game-board mx-auto mb-3">
+    <button
+      class="balloon"
+      *ngFor="let b of balloons"
+      [style.top.px]="b.top"
+      [style.left.%]="b.left"
+      [style.color]="b.color"
+      [class.popped]="b.popped"
+      [ngClass]="{
+        'bonus': b.type === 'bonus',
+        'freeze': b.type === 'freeze',
+        'bomb': b.type === 'bomb'
+      }"
+      (click)="pop(b)"
+    >
+      <span *ngIf="!b.popped">{{ b.emoji }}</span>
       <span *ngIf="b.popped">💥</span>
     </button>
   </div>
-  <p>Popped: {{ popped }} / {{ balloons.length }}</p>
-  <button class="btn btn-primary" (click)="reset()">Restart</button>
-  <a routerLink="/" class="btn btn-link d-block mt-2">Back to Games</a>
+<button class="btn btn-secondary mb-2" (click)="enterFullscreen()">🖥️ Fullscreen</button>
+  <button class="btn btn-secondary mb-2" (click)="exitFullscreen()">Exit Fullscreen</button>
+
+  <button class="btn btn-primary mb-2" (click)="reset()">Restart</button>
 </div>
