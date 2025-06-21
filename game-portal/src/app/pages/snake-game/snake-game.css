@@ -1,8 +1,18 @@
 canvas {
   background: #f8f9fa;
-  width: 100%;
-  max-width: 600px;
-  height: auto;
   display: block;
   margin: 0 auto;
+  image-rendering: pixelated; /* sharp pixels */
+  width: auto;                /* don't stretch */
+  max-width: 100%;            /* scales safely */
+}
+ngx-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Behind all content */
+  pointer-events: none; /* Prevent interference with gameplay */
+
 }

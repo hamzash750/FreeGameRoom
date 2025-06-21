@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,7 +8,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './game-list.html',
   styleUrl: './game-list.css',
     standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,FormsModule],
 })
 export class GameList {
   currentYear = new Date().getFullYear();
