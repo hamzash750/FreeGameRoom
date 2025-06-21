@@ -14,5 +14,4 @@ ngx-particles {
   height: 100vh;
   z-index: -1; /* Behind all content */
   pointer-events: none; /* Prevent interference with gameplay */
-
 }

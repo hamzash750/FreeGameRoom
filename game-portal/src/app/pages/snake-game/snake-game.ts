@@ -36,18 +36,29 @@ export class SnakeGame implements AfterViewInit {
   private direction: Point = { x: 1, y: 0 };
   private nextDirection: Point = { x: 1, y: 0 };
 
-  ngAfterViewInit(): void {
-    const canvas = this.canvasRef.nativeElement;
-    canvas.width = this.size * this.gridCount;
-    canvas.height = this.size * this.gridCount;
-    this.ctx = canvas.getContext('2d')!;
-    document.addEventListener('keydown', e => this.onKey(e));
+ngAfterViewInit(): void {
+  const canvas = this.canvasRef.nativeElement;
 
-    this.loadHighScore();
-    this.setupTouchControls();
-    this.setDifficulty(this.difficulty);
-    this.startGame();
-  }
+  // Make the canvas square and fill the viewport
+  const side = Math.min(window.innerWidth, window.innerHeight);
+
+  canvas.width = side;
+  canvas.height = side;
+
+  this.ctx = canvas.getContext('2d')!;
+
+  // Adjust size and grid count dynamically based on screen
+  this.gridCount = 20; // or whatever makes sense for difficulty
+  this.size = Math.floor(side / this.gridCount);
+
+  // Setup game
+  document.addEventListener('keydown', (e) => this.onKey(e));
+
+  this.loadHighScore();
+  this.setupTouchControls();
+  this.setDifficulty(this.difficulty);
+  this.startGame();
+}
 
   private onKey(e: KeyboardEvent): void {
     const key = e.key;
@@ -166,7 +177,7 @@ export class SnakeGame implements AfterViewInit {
 
   private playSound(type: 'eat' | 'gameover') {
     const audio = new Audio();
-    audio.src = type === 'eat' ? '/sound/pop.mp3' : '/sound/gameOver.mp3';
+    audio.src = type === 'eat' ? 'sound/pop.mp3' : 'sound/gameOver.mp3';
     audio.load();
     audio.play();
   }
@@ -223,7 +234,7 @@ export class SnakeGame implements AfterViewInit {
 
 particlesOptions = {
   background: {
-    color: { value: "#000000" }
+    color: { value: "#f8f9fa" }
   },
   fpsLimit: 60,
   particles: {
