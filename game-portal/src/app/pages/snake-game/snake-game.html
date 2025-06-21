@@ -1,6 +1,44 @@
+<ngx-particles [id]="'tsparticles'" [options]="particlesOptions" ></ngx-particles>
+
+
 <div class="game-container container py-4 text-center">
-  <h2 class="mb-3">Snake</h2>
-  <canvas #canvas class="border mb-2 game-board game-board-square"></canvas>
-  <p>Score: {{ score }}</p>
-  <a routerLink="/" class="btn btn-link">Back to Games</a>
+  <h2>🐍 Snake Game</h2>
+
+  <div class="mb-3">
+    <label class="form-label">🎮 Difficulty:</label>
+    <select class="form-select w-auto d-inline-block" [(ngModel)]="difficulty" (change)="restart()">
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+    </select>
+  </div>
+
+  <canvas #canvas class="border mb-2"></canvas>
+
+  <div class="mt-2">
+    <p>⏱ Time Left: <strong>{{ remainingTime }}s</strong></p>
+    <p>🎯 Score: <strong>{{ score }}</strong></p>
+    <p>🏆 High Score: <strong>{{ highScore }}</strong></p>
+  </div>
+
+  <button class="btn btn-success" (click)="restart()">🔄 Restart</button>
+  <a routerLink="/" class="btn btn-link">⬅️ Back to Games</a>
+</div>
+<!-- Game Over Modal -->
+<div class="modal fade" id="gameOverModal" tabindex="-1" aria-labelledby="gameOverModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gameOverModalLabel">🕹 Game Over</h5>
+      </div>
+      <div class="modal-body">
+        <p>Your score: <strong>{{ score }}</strong></p>
+        <p *ngIf="score >= highScore" class="text-success">🏆 New High Score!</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button class="btn btn-success" (click)="restart()" data-bs-dismiss="modal">Play Again</button>
+        <a routerLink="/" class="btn btn-outline-secondary" data-bs-dismiss="modal">Back to Menu</a>
+      </div>
+    </div>
+  </div>
 </div>
